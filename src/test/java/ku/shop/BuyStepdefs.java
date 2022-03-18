@@ -1,6 +1,5 @@
 package ku.shop;
 
-import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -12,8 +11,8 @@ public class BuyStepdefs {
     private ProductCatalog catalog;
     private Order order;
 
-    @Before
-    public void setup() {
+    @Given("the store is ready to service customers")
+    public void the_store_is_ready_to_service_customers() {
         catalog = new ProductCatalog();
         order = new Order();
     }

@@ -3,7 +3,8 @@ Feature: Buy products
     I want to buy products
 
 Background:
-    Given a product "Bread" with price 20.50 exists
+    Given the store is ready to service customers
+    And a product "Bread" with price 20.50 exists
     And a product "Jam" with price 80.00 exists
 
 Scenario: Buy one product
