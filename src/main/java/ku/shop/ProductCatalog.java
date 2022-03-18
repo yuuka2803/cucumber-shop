@@ -5,19 +5,14 @@ import java.util.Map;
 
 public class ProductCatalog {
 
-    private static final int DEFAULT_QUANTITY = 10;
     private Map<String, Product> products;
 
     public ProductCatalog() {
         products = new HashMap<>();
     }
 
-    public void addProduct(String name, double price, int quantity) {
-        products.put(name, new Product(name, price, quantity));
-    }
-
-    public void addProduct(String name, double price) {
-        addProduct(name, price, DEFAULT_QUANTITY);
+    public void addProduct(String name, double price, int stock) {
+        products.put(name, new Product(name, price, stock));
     }
 
     public Product getProduct(String name) {

@@ -3,12 +3,16 @@ package ku.shop;
 public class Product {
     private double price;
     private String name;
-    private int quantity;
+    private int stock;
 
-    public Product(String name, double price, int quantity) {
+    public Product(String name, double price, int stock) {
         this.name = name;
         this.price = price;
-        this.quantity = quantity;
+        this.stock = stock;
+    }
+
+    public void cutStock(int quantity) {
+        stock -= quantity;
     }
 
     public String getName() {
@@ -17,21 +21,13 @@ public class Product {
     public double getPrice() {
         return price;
     }
-    public int getQuantity() {
-        return quantity;
+    public int getStock() {
+        return stock;
     }
-
     public void setName(String name) {
         this.name = name;
     }
     public void setPrice(double price) {
-        if (price < 0)
-            throw new IllegalArgumentException("Price must be positive");
         this.price = price;
-    }
-    public void setQuantity(int quantity) {
-        if (quantity < 0)
-            throw new IllegalArgumentException("Quantity must be positive");
-        this.quantity = quantity;
     }
 }

@@ -17,9 +17,9 @@ public class BuyStepdefs {
         order = new Order();
     }
 
-    @Given("a product {string} with price {float} exists")
-    public void a_product_with_price_exists(String name, double price) {
-        catalog.addProduct(name, price);
+    @Given("a product {string} with price {float} and stock of {int} exists")
+    public void a_product_exists(String name, double price, int stock) {
+        catalog.addProduct(name, price, stock);
     }
 
     @When("I buy {string} with quantity {int}")

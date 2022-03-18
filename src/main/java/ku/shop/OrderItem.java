@@ -5,9 +5,6 @@ public class OrderItem {
     private Product prod;
 
     public OrderItem(Product prod, int quantity) {
-        if (quantity <= 0)
-            throw new IllegalArgumentException("Quantity must be positive");
-
         this.prod = prod;
         this.quantity = quantity;
     }
@@ -15,5 +12,4 @@ public class OrderItem {
     public double getSubtotal() {
         return prod.getPrice() * quantity;
     }
-
 }
